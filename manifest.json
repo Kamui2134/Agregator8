@@ -1,7 +1,7 @@
 {
-	"name": "GG Casino",
-	"short_name": "GG Casino",
-	"description": "GG Casino is the ultimate destination for an unparalleled gambling experience",
+	"name": "XSlotsPortal",
+	"short_name": "XSlotsPortal",
+	"description": "XSlotsPortal is the perfect destination for a one-of-a-kind gambling adventure.",
 	"start_url": "/",
 	"form_factor": ["small", "medium", "large"],
 	"display": "standalone",
