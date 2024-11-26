@@ -132,6 +132,62 @@
 
 /* HEADER */
 
+.header {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	padding: 20px;
+	background-color: var(--color-translucent-2);
+	position: relative;
+}
+.header__container {
+	width: min(1200px, 100%);
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+.header__logo {
+	width: 300px;
+	border: 2px solid var(--color-white);
+	padding: 5px;
+	border-radius: 10px;
+}
+.header__policy-links {
+	display: flex;
+	gap: 20px;
+}
+.header__policy-link {
+	color: var(--color-white);
+	text-wrap: nowrap;
+}
+.header__menu-btn,
+.header__menu-btn::before,
+.header__menu-btn::after {
+	height: 2px;
+	width: 20px;
+	background-color: var(--color-white);
+}
+.header__menu-btn {
+	position: relative;
+	display: none;
+	transform-origin: left center;
+	transition: transform 200ms ease;
+}
+.header__menu-btn::before {
+	content: '';
+	left: 0;
+	top: -8px;
+	position: absolute;
+	transform-origin: left bottom;
+}
+.header__menu-btn::after {
+	content: '';
+	left: 0;
+	bottom: -8px;
+	position: absolute;
+	transform-origin: left top;
+}
+
 /* MAIN */
 .main {
 	width: 100%;
@@ -290,7 +346,7 @@
 	border-radius: 100px 100px 100px 0;
 }
 .other-games__logo {
-	height: 80px;
+	width: 180px;
 	object-fit: contain;
 }
 .other-games__bonus {
@@ -520,7 +576,6 @@
 	color: var(--color-white);
 }
 
-
 /* FOOTER */
 .footer {
 	width: 100%;
@@ -641,6 +696,27 @@
 	/* REUSED STYLES */
 	.casino-link {
 		font-size: var(--fontSize-14);
+	}
+	/* HEADER */
+	.header__logo {
+		width: 200px;
+	}
+	.header__menu-btn {
+		display: block;
+	}
+	.header__policy-links {
+		position: absolute;
+		top: 100%;
+		flex-direction: column;
+		gap: 20px;
+		padding: 0px 20px 20px;
+		width: 100%;
+		background-color: var(--color-translucent-2);
+		left: -100%;
+		transition: all 200ms ease;
+	}
+	.header__policy-links.active {
+		left: 0;
 	}
 	/* MAIN */
 	/* MAIN -> BEST-GAMES */
@@ -834,4 +910,8 @@
 	/* MAIN -> ABOUT-SECURE */
 	/* MAIN -> FAQ */
 	/* FOOTER */
+	.footer__copyright {
+		font-size: var(--fontSize-14);
+		text-wrap: nowrap;
+	}
 }

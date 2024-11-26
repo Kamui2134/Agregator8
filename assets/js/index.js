@@ -45,3 +45,21 @@ for (let i = 0; i < questionsBtns.length; i++) {
 		questionToggle(i)
 	})
 }
+
+// Toggle Btn
+
+const menuBtn = document.querySelector(".header__menu-btn")
+const policyLinks = document.querySelector(".header__policy-links")
+const allPolicyLink = document.querySelectorAll(".header__policy-link")
+
+menuBtn.addEventListener('click', function () {
+	this.classList.toggle("active")
+	policyLinks.classList.toggle("active")
+})
+
+allPolicyLink.forEach((element) => {
+	element.addEventListener("click", () => {
+		menuBtn.classList.toggle("active")
+		policyLinks.classList.toggle('active')
+	})
+})
