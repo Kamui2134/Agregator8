@@ -347,6 +347,7 @@
 }
 .other-games__logo {
 	width: 180px;
+	height: 70px;
 	object-fit: contain;
 }
 .other-games__bonus {
