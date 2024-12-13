@@ -26,6 +26,22 @@
 
 			gtag('config', 'AW-16605608047')
 		</script>
+		<!-- Event snippet for rudeg conversion page
+In your html page, add the snippet and call gtag_report_conversion when someone clicks on the chosen link or button. -->
+		<script>
+			function gtag_report_conversion(url) {
+				// var callback = function () {
+				//	if (typeof url != 'undefined') {
+				//		window.location = url
+				//	}
+				//}
+				gtag('event', 'conversion', {
+					send_to: 'AW-16605608047/251jCNnv1vYZEO_wle49',
+					// event_callback: callback,
+				})
+				return false
+			}
+		</script>
 	</head>
 	<body>
 		<header class="header">
@@ -794,7 +810,7 @@
 				<div class="footer__contacts">
 					<div class="footer__contact">
 						<h1 class="footer__contact-title">Contact Us:</h1>
-						<a class="footer__contact-mail" href="mailto:ggcasino@gmail.com"
+						<a target="_parent" class="footer__contact-mail" href="mailto:ggcasino@gmail.com"
 							>ggcasino@gmail.com</a
 						>
 					</div>
@@ -833,11 +849,11 @@
 						© 2024 XSlotsPortal. ALL RIGHTS RESERVED.
 					</p>
 					<div class="footer__policy-links">
-						<a class="footer__policy-link" href="./policy.html"
+						<a target="_parent" class="footer__policy-link" href="./policy.html"
 							>Privacy Policy</a
 						>
-						<a class="footer__policy-link" href="./terms.html">Terms Of Use</a>
-						<a class="footer__policy-link" href="./cookie.html"
+						<a target="_parent" class="footer__policy-link" href="./terms.html">Terms Of Use</a>
+						<a target="_parent" class="footer__policy-link" href="./cookie.html"
 							>Cookie Policy</a
 						>
 					</div>
@@ -869,6 +885,9 @@
 				a.href +=
 					(a.href.includes('?') ? '&' : '?') +
 					document.location.search.substr(1)
+				a.addEventListener('click', function () {
+					gtag_report_conversion(a.href)
+				})
 			}
 		</script>
 	</body>
